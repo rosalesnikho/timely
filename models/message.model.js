@@ -4,6 +4,5 @@ const shortId = require('shortid')
 const messageSchema = new mongoose.Schema({
     message: {
         type: String,
-        req
     }
 })
