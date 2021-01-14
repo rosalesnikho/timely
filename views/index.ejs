@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+
+<body>
+<div class="nes-container with-title is-centered">
+    <h1>Shrink URL</h1>
+<form action="/chopped" method="POST">
+    <label for="fullURL">Enter a long URL</label>
+    <input type="url" name="fullURL" id="fullURL">
+    <button type="submit">Dice It!</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Full URL</th>
+        <th>Short URL</th>
+        <th>Clicked</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% allShortUrls.forEach( url => { %>
+        <tr>
+            <td><a href="<%= url.fullURL %>"><%= url.fullURL %></a></td>
+            <td><a href="<%= url.shortURL %>"><%= url.shortURL %></a></td>
+            <td><% url.clickURL %></td>
+        </tr>
+    <% }) %>
+
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>
